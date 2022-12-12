@@ -37,7 +37,7 @@ const ProductPage = () => {
     };
     Callmainpage();
   }, []);
-
+  console.log(isUserLogged);
   const deletec = async (proddata) => {
     if (isUserLogged) {
       dispatch({
