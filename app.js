@@ -1,13 +1,15 @@
 const dotenv = require("dotenv");
 const express = require("express");
 const app = express();
-
+const path = require("path");
+const cors = require("cors");
 dotenv.config({ path: "./config.env" });
 require("./DB/conn");
 
 app.use(express.json());
 
 app.use(require("./router/auth"));
+app.use(cors());
 
 app.use(express.static(path.join(__dirname, "./client/build")));
 app.get("/", (req, res) => {
