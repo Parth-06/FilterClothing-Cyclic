@@ -13,51 +13,53 @@ const ProductPage = () => {
   const location = useLocation();
   const { data } = location.state;
   const [selected, setSelected] = useState(data.image);
-  const [isUserLogged, setisUserLogged] = useState(false);
-  useEffect(() => {
-    const Callmainpage = async () => {
-      try {
-        const res = await fetch("/home", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          credentials: "include",
-        });
-        await res.json();
-        setisUserLogged(true);
-        if (!res.status === 200) {
-          const error = new Error(res.error);
-          throw error;
-        }
-      } catch (err) {
-        setisUserLogged(false);
-      }
-    };
-    Callmainpage();
-  }, []);
-  console.log(isUserLogged);
+
   const deletec = async (proddata) => {
-    if (isUserLogged) {
+    try {
+      const res = await fetch("/home", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        credentials: "include",
+      });
+      await res.json();
       dispatch({
         type: "REMOVE_FROM_CART",
         payload: proddata,
       });
       toast.error("Removed From Bag");
-    } else {
+      if (!res.status === 200) {
+        const error = new Error(res.error);
+        throw error;
+      }
+    } catch (err) {
       toast.error("Please Login to Access Bag");
     }
   };
 
   const addedCart = async (proddata) => {
-    if (isUserLogged) {
+    try {
+      const res = await fetch("/home", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        credentials: "include",
+      });
+      await res.json();
       dispatch({
         type: "ADD_TO_CART",
         payload: proddata,
       });
       toast.success("Added to Bag");
-    } else {
+      if (!res.status === 200) {
+        const error = new Error(res.error);
+        throw error;
+      }
+    } catch (err) {
       toast.error("Please Login to Access Bag");
     }
   };

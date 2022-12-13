@@ -1,11 +1,16 @@
-import React, { useEffect, useState, memo, useContext } from "react";
+import React, { useEffect, useState, memo } from "react";
 import { CartState } from "../Context/Context";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link, useNavigate } from "react-router-dom";
 
-const CheckToken = () => {
+const Cart = () => {
+  const [total, setTotal] = useState();
+  const {
+    state: { cart },
+    dispatch,
+  } = CartState();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -32,16 +37,6 @@ const CheckToken = () => {
     };
     Callmainpage();
   }, []);
-};
-
-const Cart = () => {
-  const [total, setTotal] = useState();
-  const {
-    state: { cart },
-    dispatch,
-  } = CartState();
-  CheckToken();
-  const navigate = useNavigate();
 
   const deletec = async (proddata) => {
     dispatch({
