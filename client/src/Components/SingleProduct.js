@@ -1,8 +1,8 @@
-import React, { memo } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { Rating } from "react-simple-star-rating";
 
-const SingleProduct = memo(({ prod, cartdata }) => {
+const SingleProduct = ({ prod, cartdata }) => {
   return (
     <Link
       style={{ color: "black", textDecoration: "none", listStyleType: "none" }}
@@ -38,6 +38,6 @@ const SingleProduct = memo(({ prod, cartdata }) => {
       </div>
     </Link>
   );
-});
+};
 
-export default memo(SingleProduct);
+export default SingleProduct;

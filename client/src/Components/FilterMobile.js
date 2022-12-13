@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { CartState } from "../Context/Context";
 import { Rating } from "react-simple-star-rating";
 

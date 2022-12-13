@@ -1,4 +1,4 @@
-import React, { memo, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { CartState } from "../Context/Context";
 
@@ -235,4 +235,4 @@ const Header = () => {
   );
 };
 
-export default memo(Header);
+export default Header;

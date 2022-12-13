@@ -1,8 +1,8 @@
-import React, { memo } from "react";
+import React from "react";
 import { CartState } from "../Context/Context";
-const SingleProduct = React.lazy(() => import("./SingleProduct"));
+import SingleProduct from "./SingleProduct";
 
-const ProductSort = React.memo(() => {
+const ProductSort = () => {
   const {
     state: { data },
     productState: {
@@ -80,6 +80,6 @@ const ProductSort = React.memo(() => {
       </div>
     </div>
   );
-});
+};
 
-export default memo(ProductSort);
+export default ProductSort;

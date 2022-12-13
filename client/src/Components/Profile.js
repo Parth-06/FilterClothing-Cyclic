@@ -1,12 +1,10 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "react-toastify/dist/ReactToastify.css";
 import Spinner from "./Spinner";
 import { toast } from "react-toastify";
 
 const Profile = () => {
   const navigate = useNavigate();
-  const [checklog, setChecklog] = useState(true);
 
   useEffect(() => {
     const Callmainpage = async () => {
@@ -20,7 +18,6 @@ const Profile = () => {
           credentials: "include",
         });
         await res.json();
-        setChecklog(true);
         if (!res.status === 200) {
           const error = new Error(res.error);
           throw error;
@@ -50,17 +47,12 @@ const Profile = () => {
             <Spinner />
           </div>
         }
-      >
-        {checklog === true ? (
-          <div className="profile">
-            <Link to="/logout" className="for_link">
-              <button className="Addcart">Logout</button>
-            </Link>
-          </div>
-        ) : (
-          ""
-        )}
-      </Suspense>
+      ></Suspense>
+      <div className="profile">
+        <Link to="/logout" className="for_link">
+          <button className="Addcart">Logout</button>
+        </Link>
+      </div>
     </>
   );
 };

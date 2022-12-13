@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 import { CartState } from "../Context/Context";
-import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
 import { Rating } from "react-simple-star-rating";
 

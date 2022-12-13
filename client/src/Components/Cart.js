@@ -1,8 +1,6 @@
-import React, { useEffect, useState, memo } from "react";
+import React, { useEffect, useState } from "react";
 import { CartState } from "../Context/Context";
-import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link, useNavigate } from "react-router-dom";
 
 const Cart = () => {
@@ -107,7 +105,7 @@ const Cart = () => {
                           listStyleType: "none",
                         }}
                       >
-                        <LazyLoadImage src={prod.image} alt={prod.name} />
+                        <img src={prod.image} alt={prod.name} />
                       </Link>
                     </div>
                     <div className="right_details">
@@ -190,4 +188,4 @@ const Cart = () => {
   );
 };
 
-export default memo(Cart);
+export default Cart;

@@ -1,14 +1,10 @@
-import React, { memo } from "react";
+import React from "react";
 import "react-toastify/dist/ReactToastify.css";
-import { CartState } from "../Context/Context";
 import HeaderFilter from "./HeaderFilter";
 import LeftBox from "./LeftBox";
-const ProductSort = React.lazy(() => import("./ProductSort"));
+import ProductSort from "./ProductSort";
 
 const Home = () => {
-  const {
-    state: { data },
-  } = CartState();
   return (
     <>
       <HeaderFilter />
@@ -23,4 +19,4 @@ const Home = () => {
   );
 };
 
-export default memo(Home);
+export default Home;

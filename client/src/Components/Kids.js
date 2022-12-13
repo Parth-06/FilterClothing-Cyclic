@@ -3,7 +3,6 @@ import { CartState } from "../Context/Context";
 import HeaderFilter from "./HeaderFilter";
 import LeftBox from "./LeftBox";
 import SingleProduct from "./SingleProduct";
-import "react-toastify/dist/ReactToastify.css";
 
 const Kids = () => {
   const {
