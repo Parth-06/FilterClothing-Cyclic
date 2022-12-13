@@ -30,7 +30,7 @@ const Login = () => {
     } else {
       userDispatch({
         type: "LOGGEDUSER",
-        payload: true,
+        payload: "AVAILABLE",
       });
       toast.success("Login successfully");
       navigate("/");
@@ -61,7 +61,7 @@ const Login = () => {
     } else {
       userDispatch({
         type: "LOGGEDUSER",
-        payload: true,
+        payload: "GUESTAVAILABLE",
       });
       toast.success("Login successfully");
       navigate("/");

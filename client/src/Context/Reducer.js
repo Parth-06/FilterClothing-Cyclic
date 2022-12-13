@@ -103,7 +103,7 @@ export const productReducer = (state, action) => {
 export const loggedUser = (state, action) => {
   switch (action.type) {
     case "LOGGEDUSER":
-      return { user: action.payload };
+      return { ...state, user: action.payload };
     default:
       return state;
   }

@@ -23,7 +23,7 @@ const Context = ({ children }) => {
   });
 
   const [userState, userDispatch] = useReducer(loggedUser, {
-    user: false,
+    user: "NOTAVAILABLE",
   });
 
   const [ratingstate, ratingdispatch] = useReducer(ratingReducer, {

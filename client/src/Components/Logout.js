@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import { CartState } from "../Context/Context";
 
 const Logout = () => {
-  const { dispatch } = CartState();
+  const { dispatch, userDispatch } = CartState();
   const navigate = useNavigate();
   useEffect(() => {
     const Logoutpage = async () => {
@@ -20,6 +20,10 @@ const Logout = () => {
         navigate("/login");
         dispatch({
           type: "RESETCART",
+        });
+        userDispatch({
+          type: "LOGGEDUSER",
+          payload: "NOTAVAILABLE",
         });
         toast.error("Logged out");
 
